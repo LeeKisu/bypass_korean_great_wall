@@ -46,3 +46,7 @@ HTTPS 차단 우회 방법을 찾기에 앞서, 보다 근본적인 웹의 동�
 
 
 그리고 브라우져에 naver.com을 입력하고 wireshark를 보면, 아까와는 다르게 local dns와 dns query가 오고가지 않는 다는 사실을 확인할 수 있다. hosts 파일에서 해당 도메인을 찾았으므로 그 이후 과정이 일어나지 않은 것이다.
+
+
+![host 파일 수정](https://i.ibb.co/Ltggnjs/4.png)
+
