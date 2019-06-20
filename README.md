@@ -21,7 +21,7 @@ HTTPS 차단 우회 방법을 찾기에 앞서, 보다 근본적인 웹의 동�
 브라우저 주소창에 test.com을 입력하면, 제일 먼저 해당 도메인의 IP 주소가 브라우저와 운영체제의 dns 캐시에 저장되어 있는지 확인한다. dns 캐시에서 해당 도메인을 찾지 못할 경우, 운영체제의 hostname 파일을 확인해본다. (이 과정의 경우 브라우저와 OS마다 조금씩 다를 수 있다. Windows의 경우 dns 캐시와 hostname 파일을 같이 처리한다.)
 
 
-이렇게 컴퓨터 내부에서 먼저 찾아본 이후, 외부의 dns 서버에 요청을 보낸다. 컴퓨터에 설정된 local dns로 요청을 보내는데, local dns는 일반적으로 isp의 dns 서버로 설정되어있다. local dns는 요청을 받으면 자신에게 test.com의 IP 주소가 있는지 확인 해본다. 해당 도메인의 IP 주소가 있다면 바로 값을 반환해주고, 없다면 Local dns가  root dns로 요청을 보낸다. 이때, 재귀적 질의(Recursive Query) 또는 반복적 질의(Iterative Query)가 이루어진다. 재귀적 질의는 Local dns가 root dns로 요청을 보내면, root dns가 com dns로, com dns가 naver.com dns로 내려가면서 도메인의 IP주소를 질의하는 것을 말한다. 반복적 질의는 Local dns가 root dns로 요청을 보내고, Local dns가 com dns로, Local dns가 naver.com dns로 반복해서 질의하는 것을 말한다.
+이렇게 컴퓨터 내부에서 먼저 찾아본 이후, 외부의 dns 서버에 요청을 보낸다. 컴퓨터에 설정된 local dns 서버로 요청을 보내는데, local dns는 일반적으로 isp의 dns 서버로 설정되어있다. local dns는 요청을 받으면 자신에게 test.com의 IP 주소가 있는지 확인 해본다. 해당 도메인의 IP 주소가 있다면 바로 값을 반환해주고, 없다면 Local dns가  root dns로 요청을 보낸다. 이때, 재귀적 질의(Recursive Query) 또는 반복적 질의(Iterative Query)가 이루어진다. 재귀적 질의는 Local dns가 root dns로 요청을 보내면, root dns가 com dns로, com dns가 naver.com dns로 내려가면서 도메인의 IP주소를 질의하는 것을 말한다. 반복적 질의는 Local dns가 root dns로 요청을 보내고, Local dns가 com dns로, Local dns가 naver.com dns로 반복해서 질의하는 것을 말한다.
 
 
 이제 실제 동작을 통해 위까지의 2-1의 내용을 확인해보자. cmd창에서 ipconfig/all을 통해 현재 컴퓨터의 local dns를 확인해 볼 수 있다.
