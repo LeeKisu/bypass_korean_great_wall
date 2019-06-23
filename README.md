@@ -36,7 +36,7 @@ HTTPS 차단 우회 방법을 찾기에 앞서, 보다 근본적인 웹의 동�
 실제로 브라우져에 naver.com을 입력하고 일어나는 일을 패킷 캡쳐 프로그램인 wireshark를 통해 보면, dns query가 local dns인 182.172.255.180으로 날라가고 그에 대한 응답이 돌아오는 것을 볼 수 있다.
 
 
-![dns 통신 확인](https://i.ibb.co/9r1rqmq/2.png)
+![dns 통신 확인](https://i.ibb.co/QvXYN9H/image.png)
 
 
 그럼 여기서 운영체제의 hostname 파일에 naver.com을 넣어보면 어떻게 될까. windows의 hostname 파일인 hosts파일에 naver.com 도메인을 127.0.0.1로 맵핑 시켜 보았다.
